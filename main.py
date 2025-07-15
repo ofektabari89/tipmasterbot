@@ -9,14 +9,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("סטטוס: תקין. אני מקשיב לך אח!")
-
 async def daily_tip(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("🎯 טופס מומלץ יומי:
-1. מכבי ת"א - ניצחון
-2. צ'לסי - תיקו
-3. קורינתיאנס - הפסד
+    await update.message.reply_text(
+        "🎯 טיפ יומי: נוסח מומלץ לשלוח ליריב:\n\n"
+        "1. מכבי ת״א – ניצחון\n"
+        "2. צ׳לסי – תיקו\n"
+        "3. קורינתיאנס – הפסד\n\n"
+        "(נוסח דוגמה, נעדכן לפי תחזיות אמח)"
+    )
 
-(סתם דוגמה, נעדכן לפי תחזיות אמת)")
 
 app = ApplicationBuilder().token(BOT_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
